@@ -55,12 +55,15 @@ class go_carbon::params {
   $whisper_workers                    = 1
   # Limits the number of whisper update_many() calls per second. 0 - no limit
   $whisper_max_updates_per_second     = 0
+  $whisper_sparse_creates             = false
   $whisper_enabled                    = true
 
   # Limit of in-memory stored points (not metrics)
   $cache_max_size                     = 1000000
   # Capacity of queue between receivers and cache
   $cache_input_buffer                 = 51200
+  # Strategy to persist metrics. Values: "max","sorted","noop"
+  $cache_write_strategy               = "max"
 
   $udp_listen                         = '0.0.0.0:2003'
   # Enable optional logging of incomplete messages (chunked by MTU)

@@ -17,9 +17,11 @@ define go_carbon::instance(
   $whisper_aggregation_file        = $go_carbon::params::whisper_aggregation_file,
   $whisper_workers                 = $go_carbon::params::whisper_workers,
   $whisper_max_updates_per_second  = $go_carbon::params::whisper_max_updates_per_second,
+  $whisper_sparse_create           = $go_carbon::params::whisper_sparse_create,
   $whisper_enabled                 = $go_carbon::params::whisper_enabled,
   $cache_max_size                  = $go_carbon::params::cache_max_size,
   $cache_input_buffer              = $go_carbon::params::cache_input_buffer,
+  $cache_write_strategy            = $go_carbon::params::cache_write_strategy,
   $udp_listen                      = $go_carbon::params::udp_listen,
   $udp_log_incomplete              = $go_carbon::params::udp_log_incomplete,
   $udp_enabled                     = $go_carbon::params::udp_enabled,
@@ -47,9 +49,11 @@ define go_carbon::instance(
   validate_absolute_path($whisper_data_dir)
   validate_integer($whisper_workers)
   validate_integer($whisper_max_updates_per_second)
+  validate_bool($whisper_sparse_create)
   validate_bool($whisper_enabled)
   validate_integer($cache_max_size)
   validate_integer($cache_input_buffer)
+  validate_string($cache_write_strategy)
   validate_integer($go_maxprocs)
   validate_bool($service_enable)
 
