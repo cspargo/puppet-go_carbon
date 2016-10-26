@@ -36,6 +36,9 @@ define go_carbon::instance(
   $carbonlink_query_timeout        = $go_carbon::params::carbonlink_query_timeout,
   $pprof_listen                    = $go_carbon::params::pprof_listen,
   $pprof_enabled                   = $go_carbon::params::pprof_enabled,
+  $dump_enabled                    = $go_carbon::params::dump_enabled,
+  $dump_path                       = $go_carbon::params::dump_path,
+  $dump_restore_speed              = $go_carbon::params::dump_restore_speed,
 )
 {
   include go_carbon
@@ -87,6 +90,10 @@ define go_carbon::instance(
   validate_bool($pprof_enabled)
   validate_absolute_path($whisper_schemas_file)
   validate_absolute_path($whisper_aggregation_file)
+
+  validate_bool($dump_enabled)
+  validate_absolute_path($dump_path)
+  validate_integer($dump_restore_speed)
 
 
   # Put the configuration files
