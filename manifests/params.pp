@@ -33,6 +33,7 @@ class go_carbon::params {
     }
   ]
   # Run as user. Works only in daemon mode
+  $manage_user                        = true
   $user                               = 'gocarbon'
   $group                              = 'gocarbon'
   # If logfile is empty use stderr

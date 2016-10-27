@@ -8,6 +8,7 @@ class go_carbon(
   $executable               = $go_carbon::params::executable,
   $systemd_service_folder   = $go_carbon::params::systemd_service_folder,
   $config_dir               = $go_carbon::params::config_dir,
+  $manage_user              = $go_carbon::params::manage_user,
   $user                     = $go_carbon::params::user,
   $group                    = $go_carbon::params::group,
   $storage_aggregations     = $go_carbon::params::storage_aggregations,
@@ -28,6 +29,7 @@ class go_carbon(
   validate_string($group)
   validate_array($storage_aggregations)
   validate_array($storage_schemas)
+  validate_boolean($manage_user)
 
   include go_carbon::install
   include go_carbon::config
