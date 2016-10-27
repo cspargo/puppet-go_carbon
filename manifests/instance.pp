@@ -11,6 +11,7 @@ define go_carbon::instance(
   $go_maxprocs                     = $go_carbon::params::go_maxprocs,
   $internal_graph_prefix           = $go_carbon::params::internal_graph_prefix,
   $internal_metrics_interval       = $go_carbon::params::internal_metrics_interval,
+  $internal_metrics_endpoint       = $go_carbon::params::internal_metrics_endpoint,
   $max_cpu                         = $go_carbon::params::max_cpu,
   $whisper_data_dir                = $go_carbon::params::whisper_data_dir,
   $whisper_schemas_file            = $go_carbon::params::whisper_schemas_file,

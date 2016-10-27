@@ -43,6 +43,8 @@ class go_carbon::params {
   $internal_graph_prefix              = 'carbon.agents.{host}.'
   # Interval of storing internal metrics. Like CARBON_METRIC_INTERVAL
   $internal_metrics_interval          = '1m0s'
+  # Endpoint for store internal carbon metrics. Valid values: "" or "local", "tcp://host:port", "udp://host:port"
+  $internal_metrics_endpoint          = ''
   # Increase for configuration with multi persisters
   $max_cpu                            = 1
 

@@ -11,6 +11,8 @@ log-level = "<%= @log_level %>"
 graph-prefix = "<%= @internal_graph_prefix %>"
 # Interval of storing internal metrics. Like CARBON_METRIC_INTERVAL
 metric-interval = "<%= @internal_metrics_interval %>"
+# Endpoint for store internal carbon metrics. Valid values: "" or "local", "tcp://host:port", "udp://host:port"
+metric-endpoint = "<%= @internal_metrics_endpoint %>"
 # Increase for configuration with multi persisters
 max-cpu = <%= @max_cpu %>
 
