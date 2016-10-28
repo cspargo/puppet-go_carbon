@@ -29,7 +29,7 @@ class go_carbon(
   validate_string($group)
   validate_array($storage_aggregations)
   validate_array($storage_schemas)
-  validate_boolean($manage_user)
+  validate_bool($manage_user)
 
   include go_carbon::install
   include go_carbon::config
