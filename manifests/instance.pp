@@ -40,10 +40,9 @@ define go_carbon::instance(
   $dump_enabled                    = $go_carbon::params::dump_enabled,
   $dump_path                       = $go_carbon::params::dump_path,
   $dump_restore_speed              = $go_carbon::params::dump_restore_speed,
-  $executable                      = $go_carbon::executable,
-  $user                            = $go_carbon::user,
-  $config_dir                      = $go_carbon::config_dir,
-  $go_maxprocs                     = $go_carbon::go_maxprocs,
+  $executable                      = $go_carbon::params::executable,
+  $user                            = $go_carbon::params::user,
+  $config_dir                      = $go_carbon::params::config_dir,
 )
 {
   include go_carbon
