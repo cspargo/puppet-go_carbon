@@ -16,8 +16,6 @@ class go_carbon(
   $download_package         = $go_carbon::params::download_package,
   $shell                    = $go_carbon::params::shell,
   $go_maxprocs              = $go_carbon::params::go_maxprocs,
-  $executable               = $go_carbon::params::executable,
-  $config_dir               = $go_carbon::params::config_dir,
 
 ) inherits go_carbon::params {
 
