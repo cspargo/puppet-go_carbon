@@ -15,6 +15,8 @@ class go_carbon(
   $storage_schemas          = $go_carbon::params::storage_schemas,
   $download_package         = $go_carbon::params::download_package,
   $shell                    = $go_carbon::params::shell,
+  $go_maxprocs              = $go_carbon::params::go_maxprocs,
+
 ) inherits go_carbon::params {
 
   validate_re($::osfamily, '^(RedHat|Debian)', 'This module is only supported on RHEL/CentOS 6/7 or Ubuntu 16.04')

@@ -40,6 +40,9 @@ define go_carbon::instance(
   $dump_enabled                    = $go_carbon::params::dump_enabled,
   $dump_path                       = $go_carbon::params::dump_path,
   $dump_restore_speed              = $go_carbon::params::dump_restore_speed,
+  $executable                      = $go_carbon::params::executable,
+  $user                            = $go_carbon::params::user,
+  $config_dir                      = $go_carbon::params::config_dir,
 )
 {
   include go_carbon
@@ -97,18 +100,13 @@ define go_carbon::instance(
   validate_integer($dump_restore_speed)
 
 
-  # Put the configuration files
-  $executable = $go_carbon::executable
-  $config_dir = $go_carbon::config_dir
-  $user       = $go_carbon::user
-
   file {
-    "${go_carbon::config_dir}/${service_name}.conf":
+    "${config_dir}/${service_name}.conf":
       ensure  => $ensure,
       content => template("${module_name}/go-carbon.conf.erb")
   } ->
   go_carbon::service { $service_name: }
 
   Class[$module_name] ->
-  File["${go_carbon::config_dir}/${service_name}.conf"]
+  File["${config_dir}/${service_name}.conf"]
 }
