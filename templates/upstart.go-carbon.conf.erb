@@ -16,6 +16,6 @@ stop on runlevel [06]
 # If the process quits unexpectadly trigger a respawn
 respawn
 
-env GOMAXPROCS=<%= @go_maxprocs %>
+env GOMAXPROCS=<%= scope.lookupvar('go_carbon::go_maxprocs') %>
 # Start the process
-exec <%= @executable %> --config <%= @config_dir %>/<%= @service_name %>.conf
+exec <%= scope.lookupvar('go_carbon::executable') %> --config <%= scope.lookupvar('go_carbon::config_dir') %>/<%= @service_name %>.conf
