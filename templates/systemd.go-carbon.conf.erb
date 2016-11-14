@@ -5,12 +5,12 @@ After=basic.target network.target
 
 [Service]
 Environment="GOMAXPROCS=<%= scope.lookupvar('go_carbon::go_maxprocs') %>"
-ExecStart=<%= @executable %> --config <%= @config_dir %>/<%= @service_name %>.conf
+ExecStart=<%= scope.lookupvar('go_carbon::executable') %> --config <%= scope.lookupvar('go_carbon::config_dir') %>/<%= @service_name %>.conf
 ExecReload=/bin/kill -HUP $MAINPID
 KillMode=process
 Restart=on-failure
-User=<%= @user %>
-Group=<%= @group %>
+User=<%= scope.lookupvar('go_carbon::user') %>
+Group=<%= scope.lookupvar('go_carbon::group') %>
 
 [Install]
 WantedBy=multi-user.target
