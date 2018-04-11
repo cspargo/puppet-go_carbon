@@ -27,7 +27,7 @@ workers = <%= @whisper_workers %>
 # Limits the number of whisper update_many() calls per second. 0 - no limit
 max-updates-per-second = <%= @whisper_max_updates_per_second %>
 # Sparse file creation
-sparse-create = <%= whisper_sparse_create %>
+sparse-create = <%= @whisper_sparse_create %>
 enabled = <%= @whisper_enabled %>
 
 [cache]
